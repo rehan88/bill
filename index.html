@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="BillApp">
+
+<head>
+    <title>Bill</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/Styles/site.css" rel="stylesheet" />
+    <link href="assets/Styles/paper-collapse.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row topbuffer">
+            <span class="brand"><h1>Bill</h1></span>
+            </div>
+        </div>
+    </div>
+    <div ng-view></div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+    <script src="assets/Scripts/paper-collapse.min.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/Bill/bill.module.js"></script>
+    <script src="app/Bill/bill.route.js"></script>
+    <script src="app/Bill/billcontroller.js"></script>
+    <script src="app/Core/dataservices/dataservice.js"></script>    
+</body>
+
+</html>

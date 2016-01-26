@@ -1,0 +1,21 @@
+{
+  "name": "bill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehan88/BillUI.git"
+  },
+  "author": "Rehan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rehan88/BillUI/issues"
+  },
+  "homepage": "https://github.com/rehan88/BillUI#readme"
+}

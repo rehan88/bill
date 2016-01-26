@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row topbuffer">
+        <div class="col-md-12">
+            <p><b>Date generated:</b> {{ vm.bill.statement.generated | date : format : timezone}}</p>
+            <p><b>Date due:</b> {{ vm.bill.statement.due | date : format : timezone}}</p>
+            <span class="flright">
+            <p>This bill is for the following period:    
+              {{ vm.bill.statement.period.from  | date : format : timezone}}
+            - {{ vm.bill.statement.period.to  | date : format : timezone}}</span></p>
+        </div>
+    </div>
+    <h3 ng-hide="menuClicked"><span class="label label-info">Click on a row below to see more detail</span></h3>
+    <hr>
+    <div class="row outershadow">
+        <div class="collapse-card">
+            <div ng-click="menuClicked = true" class="collapse-card__heading">
+                <div class="collapse-card__title">
+                    <i class="fa fa-phone fa-2x"></i>
+                    <span class="padded">Calls</span>
+                    <span class="flright">{{vm.bill.callCharges.total | currency:"£"}}</span>
+                </div>
+            </div>
+            <div class="collapse-card__body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Call</th>
+                                <th>Duration</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="call in vm.bill.callCharges.calls">
+                                <td>{{call.called}}</td>
+                                <td>{{call.duration}}</td>
+                                <td>{{call.cost | currency: "£" }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="collapse-card">
+            <div ng-click="menuClicked = true" class="collapse-card__heading">
+                <div class="collapse-card__title">
+                    <i class="fa fa-file fa-2x"></i>
+                    <span class="padded">Packages</span><span class="flright">{{vm.bill.package.total | currency:"£"}}</span>
+                </div>
+            </div>
+            <div class="collapse-card__body">
+                <ul class="listitems" ng-repeat="subscription in vm.bill.package.subscriptions">
+                    <li><strong>{{subscription.type}}</strong> : {{subscription.name}}<span class="flright">{{subscription.cost | currency:"£" }}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse-card">
+            <div ng-click="menuClicked = true" class="collapse-card__heading">
+                <div class="collapse-card__title">
+                    <i class="fa fa-play-circle fa-2x"></i>
+                    <span class="padded">Sky Store</span><span class="flright">{{ vm.bill.skyStore.total  | currency:"£" }}</span>
+                </div>
+            </div>
+            <div class="collapse-card__body">
+                <h3>Rentals</h3>
+                <ul class="listitems" ng-repeat="rentals in vm.bill.skyStore.rentals">
+                    <li>{{rentals.title}} <span class="flright">{{rentals.cost | currency:"£" }}</span></li>
+                </ul>
+                <h3>Buy and keep</h3>
+                <ul class="listitems" ng-repeat="buyandkeep in vm.bill.skyStore.buyAndKeep">
+                    <li>{{ buyandkeep.title }} <span class="flright">{{buyandkeep.cost  | currency:"£" }}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row topbuffer">
+        <div class="col-md-12">
+            <h4><span class="flright">Total: {{vm.bill.total  | currency:"£"}}</span></h4>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function () {
+  $('.collapse-card').paperCollapse()
+})
+</script>
