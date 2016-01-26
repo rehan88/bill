@@ -10,7 +10,7 @@
       $routeProvider
         .when("/", {
           controller: "billcontroller",
-          templateUrl: "/app/Bill/bill.html",
+          templateUrl: "/bill/app/Bill/bill.html",
           controllerAs: 'vm'
         });
     }]);
